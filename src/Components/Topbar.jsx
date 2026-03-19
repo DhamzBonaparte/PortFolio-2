@@ -1,11 +1,17 @@
 import "./Topbar.scss";
 import Hero from "./Hero";
 import { useRef } from "react";
+import HomeIcon from "@mui/icons-material/Home";
+import InfoIcon from "@mui/icons-material/Info";
+import ConstructionIcon from "@mui/icons-material/Construction";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
+import AvTimerIcon from '@mui/icons-material/AvTimer';
 
 export default function Topbar() {
   const scrollRef = useRef(null);
 
-  const goToHome = () => {
+  const goToHere = () => {
     scrollRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
@@ -14,16 +20,20 @@ export default function Topbar() {
       <div className="top">
         <h2 className="top-name">Sulav Dhami</h2>
         <ul className="top-bar" type="none">
-          <li>
-            <a onClick={goToHome} className="top-links">
-              Home
-            </a>
+          <li onClick={goToHere} className="top-links">
+            Home <HomeIcon className="icon" />
           </li>
-          <li><a href="#about" className="top-links">About</a></li>
-          <li><a href="#experience" className="top-links">Experience</a></li>
-          <li><a href="#skills" className="top-links">Skills</a></li>
-          <li><a href="#projects" className="top-links">Projects</a></li>
-          <li><a href="#contact" className="top-links">Contact</a></li>
+          <li className="top-links">
+            About <InfoIcon className="icon"></InfoIcon>
+          </li>
+          <li className="top-links">Experience <AvTimerIcon className="icon"></AvTimerIcon></li>
+          <li className="top-links">
+            Skills <ConstructionIcon className="icon"></ConstructionIcon>
+          </li>
+          <li className="top-links">
+            Projects <AccountTreeIcon className="icon"></AccountTreeIcon>
+          </li>
+          <li className="top-links">Contact <ContactPhoneIcon className="icon"></ContactPhoneIcon></li>
         </ul>
       </div>
       <Hero refe={scrollRef} />

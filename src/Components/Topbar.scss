@@ -65,7 +65,20 @@
         .top-links {
             text-decoration: none;
             color: var(--color-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: var(--color-primary);
         }
     }
+}
+
+.icon{
+    height: 20px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    background-color: inherit;
 }
