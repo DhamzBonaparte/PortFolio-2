@@ -1,0 +1,71 @@
+:root {
+    /* Backgrounds */
+    --color-primary: #0A192F;
+    /* Deep Navy */
+    --color-secondary: #64FFDA;
+    /* Teal Accent */
+    --color-dark: #1F2937;
+    /* Charcoal */
+    --color-light: #F9FAFB;
+    /* Off-white */
+
+    /* Text */
+    --color-text-light: #FFFFFF;
+    --color-text-dark: #111827;
+
+    /* Highlights */
+    --color-gradient-start: #64FFDA;
+    --color-gradient-end: #3B82F6;
+    /* Indigo Blue */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap');
+
+:root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+.top {
+    display: flex;
+    justify-content: space-evenly;
+    width: 96.4vw;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    padding: 20px;
+
+    .top-name {
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-heading);
+        color:white;
+        font-size: 2.3rem;
+        padding: 0;
+        margin-left: -1rem;
+    }
+
+    .top-bar {
+        padding: 0;
+        width: 80%;
+        color: red;
+        display: flex;
+        background-color: var(--color-primary);
+        justify-content: space-around;
+        height: 7vh;
+        align-items: center;
+        border-radius: 3vh;
+        font-family: var(--font-heading);
+        color: var(--color-primary);
+        font-size: larger;
+
+
+        .top-links {
+            text-decoration: none;
+            color: var(--color-light);
+            background-color: var(--color-primary);
+        }
+    }
+}
