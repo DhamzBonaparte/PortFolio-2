@@ -1,0 +1,91 @@
+:root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+.aboutt {
+    height: 80vh;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+
+    .about-heading {
+        background-color: rgb(5 5 5 / var(--tw-bg-opacity, 1));
+
+        span {
+            color: white;
+            padding-top: 2rem;
+            display: flex;
+            height: 40%;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    .about-info {
+        height: 100%;
+        max-width: 100%;
+        padding: 40px;
+
+        .about-left {
+            height: 60%;
+            width: 50%;
+            padding: 1rem;
+            // background-color: hsla(0, 0%, 100%, .03);
+            border: 1px solid;
+            border-radius: 2rem;
+
+            .about-text {
+                font-family: var(--font-body);
+                font-size: 1.2rem;
+                line-height: 1.8;
+                background-color: hsla(0, 0%, 100%, .03);
+                margin-bottom: 1rem;
+                color: #d1d1d1;
+                padding: 1.3rem;
+                border-radius: 2rem;
+
+                .highlight {
+                    background: linear-gradient(135deg, #ff0080, #ff8c00); // pink → orange
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: 600;
+                }
+            }
+
+            .traits-container {
+                display: flex;
+                gap: 1.5rem;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-top: 2rem;
+            }
+
+            .trait-btn {
+                padding: 12px 24px;
+                font-size: 1.1rem;
+                font-family: 'Poppins', sans-serif;
+                font-weight: 600;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                --tw-text-opacity: 1;
+                color:rgb(69, 141, 255);
+                // color: rgb(59 130 246 / var(--tw-text-opacity, 1));
+                background: #111;
+                border: 2px solid rgba(255, 255, 255, 0.6); // light border
+
+                &:hover {
+                    background: linear-gradient(135deg, #222, #000); // subtle gradient darkening
+                    border-color: #fff; // border brightens
+                    transform: translateY(-4px) scale(1.05);
+                    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); // glowing effect
+                }
+            }
+        }
+    }
+
+
+}

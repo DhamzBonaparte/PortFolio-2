@@ -34,6 +34,7 @@
     z-index: 1000;
     top: 0;
     padding: 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
 
     .top-name {
         width: 20%;
@@ -41,7 +42,7 @@
         justify-content: center;
         align-items: center;
         font-family: var(--font-heading);
-        color:white;
+        color: white;
         font-size: 2.3rem;
         padding: 0;
         margin-left: -1rem;
@@ -60,7 +61,8 @@
         font-family: var(--font-heading);
         color: var(--color-primary);
         font-size: larger;
-
+        border: 1px solid white;
+        background-color: hsla(0, 0%, 100%, 0.03);
 
         .top-links {
             text-decoration: none;
@@ -68,17 +70,22 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: var(--color-primary);
+            background-color: hsla(0, 0%, 100%, 0.03);
+
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
 
-.icon{
+.icon {
     height: 20px;
-    color:white;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 10px;
     background-color: inherit;
+    background-color: hsla(0, 0%, 100%, 0.03);
 }

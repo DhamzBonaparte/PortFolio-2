@@ -21,6 +21,10 @@ export default function Hero({ refe }) {
             , creating efficient applications with clean design and robust
             functionality.
           </p>
+          <div className="button-container pop-up-text-delay2">
+            <button className="btn contact-btn">Contact Me</button>
+            <button className="btn projects-btn">See My Projects</button>
+          </div>
         </div>
       </div>
     </>

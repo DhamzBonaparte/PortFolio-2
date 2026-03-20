@@ -7,12 +7,18 @@ import ConstructionIcon from "@mui/icons-material/Construction";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
+import About from "./About";
 
 export default function Topbar() {
-  const scrollRef = useRef(null);
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
 
-  const goToHere = () => {
-    scrollRef.current.scrollIntoView({ behavior: "smooth" });
+  const goToHome = () => {
+    homeRef.current.scrollIntoView({ top:0 ,behavior: "smooth"});
+  };
+
+  const goToAbout = () => {
+    aboutRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
@@ -20,10 +26,10 @@ export default function Topbar() {
       <div className="top">
         <h2 className="top-name">Sulav Dhami</h2>
         <ul className="top-bar" type="none">
-          <li onClick={goToHere} className="top-links">
+          <li onClick={goToHome} className="top-links">
             Home <HomeIcon className="icon" />
           </li>
-          <li className="top-links">
+          <li className="top-links" onClick={goToAbout}>
             About <InfoIcon className="icon"></InfoIcon>
           </li>
           <li className="top-links">
@@ -40,7 +46,8 @@ export default function Topbar() {
           </li>
         </ul>
       </div>
-      <Hero refe={scrollRef} />
+      <Hero refe={homeRef} />
+      <About refe={aboutRef}></About>
     </>
   );
 }
