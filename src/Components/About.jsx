@@ -1,7 +1,12 @@
 import "./About.scss";
 
 export default function About({ refe }) {
-  const traits = ["Passionate", "Disciplined", "Skilled", "Fun","Creative"];
+  const traits = ["Passionate", "Disciplined", "Skilled", "Creative"];
+  const stats = [
+    { title: "5+ Years", subtitle: "Coding Experience" },
+    { title: "10+", subtitle: "Projects Completed" },
+    { title: "3", subtitle: "Major Frameworks Mastered" },
+  ];
   return (
     <>
       <div className="aboutt" ref={refe}>
@@ -34,7 +39,20 @@ export default function About({ refe }) {
               })}
             </div>
           </div>
-          <div className="about-right"></div>
+          <div className="about-right">
+            <div className="about-skills">
+              <div className="stats-container">
+                {stats.map((stat, index) => {
+                  return (
+                    <div key={index} className="stat-card">
+                      <h3 className="stat-title">{stat.title}</h3>
+                      <p className="stat-subtitle">{stat.subtitle}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

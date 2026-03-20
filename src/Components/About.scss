@@ -18,7 +18,7 @@
             justify-content: center;
             font-family: var(--font-heading);
             font-size: 3rem;
-            background: linear-gradient(135deg, #8e2de2, #4a00e0);
+            background:  #00c6ff;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -28,12 +28,14 @@
         height: 100%;
         max-width: 100%;
         padding: 40px;
+        padding-left: 9rem;
+        display: flex;
+        justify-content: space-around;
 
         .about-left {
             height: 60%;
             width: 50%;
             padding: 1rem;
-            // background-color: hsla(0, 0%, 100%, .03);
             border: 1px solid;
             border-radius: 2rem;
 
@@ -72,20 +74,65 @@
                 cursor: pointer;
                 transition: all 0.3s ease;
                 --tw-text-opacity: 1;
-                color:rgb(69, 141, 255);
-                // color: rgb(59 130 246 / var(--tw-text-opacity, 1));
-                background: #111;
-                border: 2px solid rgba(255, 255, 255, 0.6); // light border
+                // color: rgb(69, 141, 255);
+                // background: #111;
+                color: #3B82F6;
+                background-color: #0B0E14;
+                border: 2px solid #1A2B47;
 
                 &:hover {
-                    background: linear-gradient(135deg, #222, #000); // subtle gradient darkening
-                    border-color: #fff; // border brightens
+                    background: linear-gradient(135deg, #222, #000);
+                    border-color: #fff;
                     transform: translateY(-4px) scale(1.05);
-                    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2); // glowing effect
+                    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
                 }
             }
         }
+
+        .about-right {
+            height: 100%;
+            width: 50%;
+
+            .stats-container {
+                display: flex;
+                flex-direction: column; // stack vertically
+                align-items: center;
+                gap: 2.5rem;
+                margin-top: 2rem;
+            }
+
+            .stat-card {
+                width: 280px;
+                padding: 1.5rem;
+                text-align: center;
+                border-radius: 12px;
+                background: inherit; // dark card background
+                border: 2px solid rgba(255, 255, 255, 0.2); // subtle border
+                color: #fff;
+                transition: all 0.3s ease;
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+
+                &:hover {
+                    transform: translateY(-5px) scale(1.03);
+                    border-color: #fff;
+                    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+                }
+
+                .stat-title {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 0.5rem;
+                    color: #00c6ff;
+                    text-shadow: 0 0 8px rgba(0, 198, 255, 0.8);
+                }
+
+                .stat-subtitle {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    color: #ddd;
+                }
+            }
+
+        }
     }
-
-
 }

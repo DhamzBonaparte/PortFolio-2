@@ -32,9 +32,9 @@ export default function Topbar() {
           <li className="top-links" onClick={goToAbout}>
             About <InfoIcon className="icon"></InfoIcon>
           </li>
-          <li className="top-links">
+          {/* <li className="top-links">
             Experience <AvTimerIcon className="icon"></AvTimerIcon>
-          </li>
+          </li> */}
           <li className="top-links">
             Skills <ConstructionIcon className="icon"></ConstructionIcon>
           </li>
