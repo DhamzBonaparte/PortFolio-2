@@ -1,0 +1,99 @@
+$bg-main: #0b0d0e;
+$badge-bg: #1a1c1e;
+$border-soft: #2d2f31;
+$text-bright: #ffffff;
+$text-dim: #94a3b8;
+$accent: #60a5fa;
+
+.skills-card {
+  max-width: 700px;
+  background-color: $bg-main;
+  padding: 2rem;
+  border-radius: 40px;
+  color: $text-bright;
+  background: inherit;
+  font-family: 'Inter', system-ui, sans-serif;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border:1px solid white;
+  margin-left: 25%;
+  height: 75vh;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  &__icon-stack {
+    opacity: 0.15;
+    span {
+      display: block;
+      width: 50px;
+      height: 12px;
+      background: #fff;
+      margin-bottom: 4px;
+      transform: skewX(-35deg) rotate(-15deg);
+    }
+  }
+
+  .skill-group {
+    margin-bottom: 2rem;
+
+    &__label {
+      color: $text-dim;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1rem;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .skill-badge {
+      background-color: $badge-bg;
+      border: 1px solid $border-soft;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+      white-space: nowrap; // Keeps items like "JWT Authentication" on one line
+
+      &:hover {
+        border-color: $accent;
+        color: $accent;
+        background: rgba($accent, 0.05);
+        cursor: default;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-card {
+    padding: 1.5rem;
+    border-radius: 24px;
+    
+    &__title {
+      font-size: 1.8rem;
+    }
+    
+    .skill-badge {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+}

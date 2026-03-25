@@ -6,19 +6,31 @@ import InfoIcon from "@mui/icons-material/Info";
 import ConstructionIcon from "@mui/icons-material/Construction";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
-import AvTimerIcon from "@mui/icons-material/AvTimer";
 import About from "./About";
+import Skills from "./Skiills";
+import Projects from "./Projects";
 
 export default function Topbar() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectRef = useRef(null)
+
 
   const goToHome = () => {
-    homeRef.current.scrollIntoView({ top:0 ,behavior: "smooth"});
+    homeRef.current.scrollIntoView({ block: "center"  ,behavior: "smooth"});
   };
 
   const goToAbout = () => {
     aboutRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  const goToSkills = () => {
+    skillsRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+    const goToProjects = () => {
+    projectRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
@@ -32,13 +44,10 @@ export default function Topbar() {
           <li className="top-links" onClick={goToAbout}>
             About <InfoIcon className="icon"></InfoIcon>
           </li>
-          {/* <li className="top-links">
-            Experience <AvTimerIcon className="icon"></AvTimerIcon>
-          </li> */}
-          <li className="top-links">
+          <li className="top-links" onClick={goToSkills}>
             Skills <ConstructionIcon className="icon"></ConstructionIcon>
           </li>
-          <li className="top-links">
+          <li className="top-links" onClick={goToProjects}>
             Projects <AccountTreeIcon className="icon"></AccountTreeIcon>
           </li>
           <li className="top-links">
@@ -48,6 +57,8 @@ export default function Topbar() {
       </div>
       <Hero refe={homeRef} />
       <About refe={aboutRef}></About>
+      <Skills refe={skillsRef}></Skills>
+      <Projects refe={projectRef}/>
     </>
   );
 }

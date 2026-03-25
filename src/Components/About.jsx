@@ -3,7 +3,7 @@ import "./About.scss";
 export default function About({ refe }) {
   const traits = ["Passionate", "Disciplined", "Skilled", "Creative"];
   const stats = [
-    { title: "5+ Years", subtitle: "Coding Experience" },
+    { title: "1+ Years", subtitle: "Coding Experience" },
     { title: "10+", subtitle: "Projects Completed" },
     { title: "3", subtitle: "Major Frameworks Mastered" },
   ];

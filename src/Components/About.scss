@@ -5,6 +5,7 @@
 
 .aboutt {
     height: 80vh;
+    margin-bottom: 9rem;
     background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
 
     .about-heading {
@@ -133,6 +134,60 @@
                 }
             }
 
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .aboutt {
+        .about-info {
+            padding-left: 2rem; // Remove the massive 9rem left padding
+            .about-left { width: 55%; }
+            .about-right { width: 40%; }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutt {
+        margin-bottom: 4rem;
+        
+        .about-info {
+            flex-direction: column; // Stack sections
+            align-items: center;
+            padding: 20px;
+            
+            .about-left, .about-right {
+                width: 100%; // Take full width
+                max-width: 500px;
+            }
+
+            .about-left {
+                order: 1; // Content first
+            }
+
+            .about-right {
+                order: 2; // Stats second
+                margin-top: 2rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutt {
+        .about-heading span {
+            font-size: 2.2rem;
+        }
+
+        .about-info .about-left {
+            padding: 1rem;
+            border-radius: 1.5rem;
+
+            .about-text {
+                font-size: 1rem;
+                padding: 1rem;
+            }
         }
     }
 }
