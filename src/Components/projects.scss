@@ -1,3 +1,188 @@
-.projects{
-    height: 90vh;
+// Variables
+$bg-dark: #0a0a0a;
+$card-bg: #111111;
+$text-secondary: #9ca3af;
+$accent-blue: #3b82f6;
+$accent-green: #10b981;
+
+:root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+// Variables (Add the specific cyan color from your image)
+$accent-cyan: #00cefe; // This matches the "About Me" text color
+
+.projects-section {
+    background: inherit;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; // Stack header on top of grid
+    align-items: center;
+
+    .section-header {
+        width: 100%;
+        max-width: 1200px;
+        margin-bottom: 3rem; 
+        text-align: center;  
+        background: inherit;  // Matches the "About Me" alignment
+
+        .header-text {
+            color: $accent-cyan;
+            font-weight: 800 !important; // Extra bold like the image
+            font-size: clamp(2.5rem, 5vw, 4rem) !important; // Responsive sizing
+            letter-spacing: -1px;
+            background: inherit; 
+            font-family: 'Inter', 'Roboto', sans-serif; // Bold sans-serif
+        }
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        width: 100%;
+    }
+}
+
+.project-card {
+    position: relative;
+    background-color: $card-bg !important;
+    color: white !important;
+    border-radius: 24px !important;
+    border: 1px solid #222 !important;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; // Keeps the glow inside the border-radius
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+        pointer-events: none;
+        background: radial-gradient(circle at center, rgba($accent-blue, 0.15) 0%, rgba($accent-blue, 0) 70%);
+    }
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 40px rgba($accent-blue, 0.2) !important;
+
+        &::before {
+            opacity: 1;
+        }
+
+        &.featured {
+            border: 1px solid rgba($accent-blue, 0.6) !important;
+            box-shadow: 0 10px 40px rgba($accent-blue, 0.3) !important;
+        }
+    }
+
+    .image-wrapper {
+        position: relative;
+        padding: 10px;
+        z-index: 2;
+
+        .project-image {
+            border-radius: 18px;
+            height: 500px;
+            width: 100%;
+            object-fit: cover;
+            display: block; // Ensures no weird bottom spacing
+        }
+
+        .live-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: $accent-green;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+    }
+
+    .card-body {
+        position: relative;
+        z-index: 2; 
+        padding: 1.5rem !important;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        .project-title {
+            font-weight: 800 !important;
+            margin-top: -0.7rem !important;
+            margin-bottom: 0.7rem !important;
+            font-size: 1.4rem !important;
+            text-align: center;
+        }
+
+        .project-desc {
+            color: $text-secondary;
+            margin-bottom: 1.5rem !important;
+            font-size: 0.95rem !important;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            border-radius: 20px;
+
+            .tech-chip {
+                background: inherit;
+                color: $text-secondary !important;
+                border: 1px solid #333 !important;
+                border-radius: 20px;
+                width: 80px;
+                font-size: 0.65rem !important;
+                height: 24px;
+            }
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            gap: 20px;
+            border-top: 1px solid #222;
+            padding-top: 1rem;
+            position: relative;
+            z-index: 3;
+
+            .action-link {
+                padding: 5px;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white !important;
+                font-weight: 700 !important;
+                text-decoration: none;
+                font-family: inherit;
+                font-size: 0.85rem !important;
+
+
+                &:hover {
+                    cursor: pointer;
+                    background: transparent !important;
+                    color: white !important;
+                    transform: translateX(3px);
+                }
+            }
+        }
+    }
 }

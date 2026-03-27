@@ -14,8 +14,7 @@ export default function Topbar() {
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
   const skillsRef = useRef(null);
-  const projectRef = useRef(null)
-
+  const projectRef = useRef(null);
 
   const goToHome = () => {
     homeRef.current.scrollIntoView({ block: "center"  ,behavior: "smooth"});
@@ -30,7 +29,7 @@ export default function Topbar() {
   };
 
     const goToProjects = () => {
-    projectRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    projectRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
