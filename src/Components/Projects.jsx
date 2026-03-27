@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { Typography, Chip, Card, CardMedia, CardContent } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
+import receipe from '../assets/receip2.png'
 import "./projects.scss";
-
+import multiple from "../assets/multiple.png"
 // Import image correctly
 import futhub from "../assets/futhub.png";
 
@@ -16,10 +17,12 @@ const projectData = [
       "JavaScript",
       "Node.js",
       "Express.js",
+      "SCSS",
       "REACT",
       "MongoDB",
       "SweetAlert",
       "Nodemon",
+      "HTML",
       "Material UI",
     ],
     image: futhub, // FIXED: Removed the curly braces here
@@ -27,23 +30,31 @@ const projectData = [
     live: null,
   },
   {
-    title: "Healthcare Management System",
+    title: "Find Receipe",
     description:
-      "A full-stack healthcare management system built with ASP.NET Core MVC. Features admin dashboards and patient management.",
-    tech: ["C#", "ASP.NET CORE", "MVC", "HTML", "CSS", "JAVASCRIPT"],
-    image: "https://via.placeholder.com/400x220", // Use valid path or placeholder
-    github: "#",
-    live: null,
+      "A small project featuring details of different receipes found around the world.",
+  tech: [
+      "JavaScript",
+      "HTML",
+      "SCSS",
+      "Vite",
+      "MUI",
+      "REACT",
+      "Fetch API",
+      "MongoDB",
+    ],    image: receipe, // Use valid path or placeholder
+    github: "https://github.com/DhamzBonaparte/Receipe-app",
+    live: 'https://find-receipe.netlify.app/',
+    isFeatured: true,
+
   },
   {
-    title: "Raw Endurance E-commerce",
-    description:
-      "A full-featured e-commerce platform for fitness and sports equipment, with secure payment processing.",
-    tech: ["NEXT.JS", "TYPESCRIPT", "STRIPE", "POSTGRESQL"],
-    image: "https://via.placeholder.com/400x220",
-    github: "#",
-    live: "https://demo.com",
-    isFeatured: true,
+    title: "Multiple Projects",
+    description:"A collection of small projects which does many functions.",
+    tech: ["REACT","HTML","SCSS"],
+    image: multiple,
+    github: "https://github.com/DhamzBonaparte/Multiple-Projects",
+    live: null,
   },
 ];
 
