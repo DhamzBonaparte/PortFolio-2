@@ -194,3 +194,59 @@ $transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     }
 }
+.status-message {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 6px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Sending state */
+.status-message.sending {
+  color: #92400e !important;      /* dark amber text */
+  border: 1px solid #facc15 !important; /* yellow border */
+  background: transparent !important;   /* no background */
+  svg {
+    color: #facc15 !important;
+    background: transparent !important;
+  }
+}
+
+/* Success state */
+.status-message.success {
+  color: #166534 !important;      /* dark green text */
+  border: 1px solid #22c55e !important; /* green border */
+  background: transparent !important;   /* no background */
+  svg {
+    color: #22c55e !important;
+    background: transparent !important;
+  }
+}
+
+/* Error state */
+.status-message.error {
+  color: #7f1d1d !important;      /* dark red text */
+  border: 1px solid #ef4444 !important; /* red border */
+  background: transparent !important;   /* no background */
+  svg {
+    color: #ef4444 !important;
+    background: transparent !important;
+  }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
