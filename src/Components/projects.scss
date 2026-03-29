@@ -24,16 +24,16 @@ $accent-cyan: #00cefe; // This matches the "About Me" text color
     .section-header {
         width: 100%;
         max-width: 1200px;
-        margin-bottom: 3rem; 
-        text-align: center;  
-        background: inherit;  // Matches the "About Me" alignment
+        margin-bottom: 3rem;
+        text-align: center;
+        background: inherit; // Matches the "About Me" alignment
 
         .header-text {
             color: $accent-cyan;
             font-weight: 800 !important; // Extra bold like the image
             font-size: clamp(2.5rem, 5vw, 4rem) !important; // Responsive sizing
             letter-spacing: -1px;
-            background: inherit; 
+            background: inherit;
             font-family: 'Inter', 'Roboto', sans-serif; // Bold sans-serif
         }
     }
@@ -112,7 +112,7 @@ $accent-cyan: #00cefe; // This matches the "About Me" text color
 
     .card-body {
         position: relative;
-        z-index: 2; 
+        z-index: 2;
         padding: 1.5rem !important;
         display: flex;
         flex-direction: column;

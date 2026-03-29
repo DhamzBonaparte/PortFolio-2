@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import { Typography, Chip, Card, CardMedia, CardContent } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import receipe from '../assets/receip2.png'
+import receipe from "../assets/receip2.png";
 import "./projects.scss";
-import multiple from "../assets/multiple.png"
+import multiple from "../assets/multiple.png";
 // Import image correctly
 import futhub from "../assets/futhub.png";
+import ttt from '../assets/ttt.png'
 
 const projectData = [
   {
@@ -33,7 +34,7 @@ const projectData = [
     title: "Find Receipe",
     description:
       "A small project featuring details of different receipes found around the world.",
-  tech: [
+    tech: [
       "JavaScript",
       "HTML",
       "SCSS",
@@ -42,26 +43,32 @@ const projectData = [
       "REACT",
       "Fetch API",
       "MongoDB",
-    ],    image: receipe, // Use valid path or placeholder
+    ],
+    image: receipe, // Use valid path or placeholder
     github: "https://github.com/DhamzBonaparte/Receipe-app",
-    live: 'https://find-receipe.netlify.app/',
+    live: "https://find-receipe.netlify.app/",
     isFeatured: true,
-
   },
   {
     title: "Multiple Projects",
-    description:"A collection of small projects which does many functions.",
-    tech: ["REACT","HTML","SCSS"],
+    description: "A collection of small projects which does many functions.",
+    tech: ["REACT", "HTML", "SCSS"],
     image: multiple,
     github: "https://github.com/DhamzBonaparte/Multiple-Projects",
     live: null,
   },
+  {
+    title: "Tic Tac Toe",
+    description:
+      "A classic two-player game built with HTML, CSS, and JavaScript. Features dynamic win detection, responsive design, and a clean user interface for an engaging experience.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    image: ttt,
+    github: "https://github.com/DhamzBonaparte/Tic-Tac-Toe",
+    live: null,
+  },
 ];
 
-const Projects = ({refe}) => {
-  // useEffect(() => {
-  //   document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
-  // });
+const Projects = ({ refe }) => {
   return (
     <>
       <section className="projects-section" ref={refe}>
