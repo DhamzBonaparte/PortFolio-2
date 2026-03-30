@@ -65,7 +65,7 @@ export default function Topbar() {
           </li>
         </ul>
       </div>
-      <Hero refe={homeRef} />
+      <Hero refe={homeRef} proRef={projectRef} contRef={contactRef} />
       <About refe={aboutRef}></About>
       <Skills refe={skillsRef}></Skills>
       <Projects refe={projectRef} />

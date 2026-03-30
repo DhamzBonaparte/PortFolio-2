@@ -1,7 +1,17 @@
 import "./Hero.scss";
 import heroPic from "../assets/pic.png";
+import { useRef, useEffect } from "react";
 
-export default function Hero({ refe }) {
+
+export default function Hero({ refe,proRef,contRef }) {
+  const goToContacts = () => {
+    contRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const goToProjects = () => {
+    proRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <>
       <div className="hero" ref={refe}>
@@ -22,8 +32,12 @@ export default function Hero({ refe }) {
             functionality.
           </p>
           <div className="button-container pop-up-text-delay2">
-            <button className="btn contact-btn">Contact Me</button>
-            <button className="btn projects-btn">See My Projects</button>
+            <button className="btn contact-btn" onClick={goToContacts}>
+              Contact Me
+            </button>
+            <button className="btn projects-btn" onClick={goToProjects}>
+              See My Projects
+            </button>
           </div>
         </div>
       </div>
