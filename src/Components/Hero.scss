@@ -1,18 +1,19 @@
-* {
+body {
     padding: 0;
     margin: 0;
     background-color: rgb(5 5 5 / var(--tw-bg-opacity, 1));
+    overflow-x: hidden;
 }
 
 .hero {
-    position: relative;
-    top: 0;
-    height: 88vh;
-    width: 98vw;
+    min-height: 80vh; // flexible height
+    width: 100%; // full width
     display: flex;
+    flex-wrap: wrap; // allows stacking on small screens
     align-items: center;
     justify-content: center;
-    z-index: 0;
+    position:relative;
+    max-width:100%;
 
     .left {
         display: flex;
@@ -26,7 +27,7 @@
         img {
             width: 100%;
             max-width: 350px;
-            height: 60vh;
+            height: auto;
             border-radius: 20px;
             object-fit: cover;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
@@ -36,7 +37,7 @@
                 linear-gradient(135deg, #ff6b6b, #ffd93d, #1dd1a1, #54a0ff) border-box;
 
             &:hover {
-                transform: scale(1.08); 
+                transform: scale(1.08);
                 box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
             }
         }
@@ -48,13 +49,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        width: 60%;
+        width: 100%;
         max-width: 600px;
-        padding-right: 0px;
+        padding: 1rem;
+        // width: 60%;
+        // max-width: 600px;
+        // padding-right: 0px;
 
         .title {
             font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 5vw, 5rem);
             font-weight: 700;
             color: #ffffff;
             margin-bottom: 15px;
@@ -70,7 +74,7 @@
 
         .subtitle {
             font-family: 'Roboto', sans-serif;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 2vw, 1.4rem);
             line-height: 1.6;
             color: #d1d1d1;
             max-width: 500px;
@@ -230,5 +234,37 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column; // stack image and text
+        text-align: center;
+    }
+
+    .hero .right {
+        align-items: center;
+        width: 100%;
+    }
+
+    .button-container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero .title {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .hero .btn {
+        font-size: 0.9rem;
+        padding: 10px 18px;
     }
 }
