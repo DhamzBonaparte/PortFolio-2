@@ -5,9 +5,10 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import receipe from "../assets/receip2.png";
 import "./projects.scss";
 import multiple from "../assets/multiple.png";
+import expenseTracker from "../assets/exp-track.png";
 // Import image correctly
 import futhub from "../assets/futhub.png";
-import ttt from '../assets/ttt.png'
+import ttt from "../assets/ttt.png";
 
 const projectData = [
   {
@@ -26,9 +27,30 @@ const projectData = [
       "HTML",
       "Material UI",
     ],
-    image: futhub, // FIXED: Removed the curly braces here
+    image: futhub,
     github: "https://github.com/DhamzBonaparte/FutHub",
     live: null,
+  },
+  {
+    title: "Expense Tracker",
+    description:
+      "A sleek, full-stack application built to help users manage their daily finances effortlessly. It features intuitive expense categorization, real-time balance updates, and insightful visual summaries for income and spending trends. Designed for clarity, accuracy, and smooth user experience.",
+    tech: [
+      "JavaScript",
+      "Node.js",
+      "Express.js",
+      "React",
+      "MongoDB",
+      "SCSS",
+      "Material UI",
+      "SweetAlert",
+      "HTML",
+      "Nodemon",
+    ],
+    image: expenseTracker,
+    github: "https://github.com/DhamzBonaparte/Expense-tracker",
+    live: "https://track-expense-now.netlify.app/",
+    isfeatured: true,
   },
   {
     title: "Find Receipe",
@@ -57,6 +79,7 @@ const projectData = [
     github: "https://github.com/DhamzBonaparte/Multiple-Projects",
     live: null,
   },
+
   {
     title: "Tic Tac Toe",
     description:
