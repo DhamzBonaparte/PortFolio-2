@@ -43,6 +43,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-align: center;
         font-family: var(--font-heading);
         color: white;
         font-size: clamp(1.5rem, 2.5vw, 2.3rem); // scales with screen size        padding: 0;
@@ -98,6 +99,7 @@
     }
 
     .top {
+        width: 100%;
         position: relative;
         .top-bar {
             display: none; 
@@ -105,6 +107,8 @@
     }
 
     .top-name {
+        text-align: center;
+        // margin-left:1rem;
         font-size: 3rem !important;
     }
 }
