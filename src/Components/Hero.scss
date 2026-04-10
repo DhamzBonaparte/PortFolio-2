@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -6,27 +10,27 @@ body {
 }
 
 .hero {
-    min-height: 80vh; // flexible height
-    width: 100%; // full width
+    min-height: 80vh;
+    width: 100%;
     display: flex;
-    flex-wrap: wrap; // allows stacking on small screens
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    position:relative;
-    max-width:100%;
+    justify-content: space-between;
+    position: relative;
+    max-width: 100%;
 
     .left {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        flex: 1 1 350px;
         max-width: 500px;
         margin: 0 auto;
         padding: 30px;
 
         img {
             width: 100%;
-            max-width: 350px;
+            max-width: 450px; // bigger image
             height: auto;
             border-radius: 20px;
             object-fit: cover;
@@ -41,32 +45,27 @@ body {
                 box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
             }
         }
-    }
 
+    }
 
     .right {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        width: 100%;
+        flex: 1 1 400px;
         max-width: 600px;
-        padding: 1rem;
-        // width: 60%;
-        // max-width: 600px;
-        // padding-right: 0px;
+        padding: 30px;
 
         .title {
             font-family: 'Poppins', sans-serif;
             font-size: clamp(2rem, 5vw, 5rem);
             font-weight: 700;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
 
             span {
-                background: linear-gradient(135deg, #8e2de2, #4a00e0, #ff6b6b, #ffd93d);
-
-                // background: linear-gradient(135deg, #ff6b6b, #ffd93d, #1dd1a1, #54a0ff);
+                background: linear-gradient(135deg, #8e2de2, #4a00e0);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -78,42 +77,9 @@ body {
             line-height: 1.6;
             color: #d1d1d1;
             max-width: 500px;
-        }
-    }
-
-    .right {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        width: 50%;
-        max-width: 70%;
-        padding: 30px;
-
-        .title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 5rem;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 2rem;
-
-            span {
-                background: linear-gradient(135deg, #8e2de2, #4a00e0); // purple → deep violet
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-        }
-
-        .subtitle {
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.4rem;
-            line-height: 1.7;
-            color: #d1d1d1;
-            max-width: 500px;
 
             .highlight {
-                background: linear-gradient(135deg, #ff0080, #ff8c00); // pink → orange pop
+                background: linear-gradient(135deg, #ff0080, #ff8c00);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 font-weight: 600;
@@ -123,9 +89,10 @@ body {
 
     .button-container {
         display: flex;
-        gap: 20px; // spacing between buttons
+        gap: 20px;
         justify-content: center;
         margin-top: 2rem;
+        flex-wrap: wrap;
     }
 
     .btn {
@@ -139,7 +106,7 @@ body {
         font-weight: 600;
 
         &.contact-btn {
-            background: linear-gradient(135deg, #8e2de2, #4a00e0); // popping purple
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
             color: #fff;
 
             &:hover {
@@ -149,7 +116,7 @@ body {
         }
 
         &.projects-btn {
-            background: linear-gradient(135deg, #8e2de2, #4a00e0); // popping purple
+            background: linear-gradient(135deg, #8e2de2, #4a00e0);
             color: #fff;
 
             &:hover {
@@ -158,10 +125,9 @@ body {
             }
         }
     }
-
-
 }
 
+/* Animations */
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -194,40 +160,20 @@ body {
     }
 }
 
-.pop-up-text {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: popUp 1s ease forwards;
-}
-
-@keyframes popUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.pop-up-text-delay {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: popUp 1s ease forwards;
-    animation-delay: 0.7s;
-    /* wait 2 seconds before starting */
-}
-
-@keyframes popUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+.pop-up-text,
+.pop-up-text-delay,
 .pop-up-text-delay2 {
     opacity: 0;
     transform: translateY(20px);
     animation: popUp 1s ease forwards;
+}
+
+.pop-up-text-delay {
+    animation-delay: 0.7s;
+}
+
+.pop-up-text-delay2 {
     animation-delay: 1.4s;
-    /* wait 2 seconds before starting */
 }
 
 @keyframes popUp {
@@ -237,9 +183,10 @@ body {
     }
 }
 
+/* Responsive */
 @media (max-width: 1024px) {
     .hero {
-        flex-direction: column; // stack image and text
+        flex-direction: column;
         text-align: center;
     }
 
